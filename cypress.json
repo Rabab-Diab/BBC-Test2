@@ -1,0 +1,9 @@
+{
+   "baseUrl": "https://account.bbc.com",
+   "env": {
+      "invalidEmail": "invalid@test.com",
+      "invalidPassword": "1234567890ggggg",
+      "validEmail": "rabab.diab.07@gmail.com",
+      "validPassword": "P@$$w0rd12345"
+   }
+}

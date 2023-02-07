@@ -1,0 +1,27 @@
+{
+  "name": "project2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+    "dependencies": {
+    "cypress": "^9.0.0",
+    "cypress-file-upload": "^5.0.8",
+    "mocha": "^8.2.0"
+  },
+  "devDependencies": {
+    "@cypress/eslint-plugin-dev": "^5.0.2",
+    "@cypress/skip-test": "^2.6.1",
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-chai-friendly": "^0.6.0",
+    "eslint-plugin-cypress": "^2.11.2",
+    "eslint-plugin-import": "^2.26.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^10.5.4"
+  },
+  "author": "",
+  "license": "ISC"
+}
