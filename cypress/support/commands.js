@@ -34,57 +34,48 @@
 //     return result;
 // })
 
-
-
 // Cypress.Commands.add("login", (email, password) => {
 //     cy.get('input[placeholder="Email"]').type(email)
 //     cy.get('input[placeholder="Password"]').type(password)
 //     cy.get('form').submit()
 // })
 
-//generate date command Format Tuesday, 31 January
-Cypress.Commands.add("getDate", () => {
+// generate date command Format Tuesday, 31 January
+Cypress.Commands.add('getDate', () => {
+  const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December',
+  ];
+  const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday',
+  ];
 
-    const monthNames = ["January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"
-    ];
-    const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
-    ];
+  const d = new Date();
+  const month = monthNames[d.getMonth()]; // Current Month Ex: January
+  const dayDate = d.getDate(); // today date Ex: 31
+  const day = dayNames[d.getDay()]; // Tuesday
 
-
-    const d = new Date();
-    let month = monthNames[d.getMonth()]; //Current Month Ex: January
-    let dayDate = d.getDate(); // today date Ex: 31
-    let day = dayNames[d.getDay()]; //Tuesday
-
-    // // This arrangement can be altered based on how we want the date's format to appear.
-    let currentDate = `${day}, ${dayDate} ${month}`;
-    return currentDate;
-
-})
+  // // This arrangement can be altered based on how we want the date's format to appear.
+  const currentDate = `${day}, ${dayDate} ${month}`;
+  return currentDate;
+});
 
 // Login command
-Cypress.Commands.add("login", (email, password) => {
-    cy.visit('/signin')
-    cy.get('#user-identifier-input').type(Cypress.env('validEmail'))
-    cy.get('#password-input').type(Cypress.env('validPassword'))
-    cy.get('#submit-button').click()
-
-})
+Cypress.Commands.add('login', (email, password) => {
+  cy.visit('/signin');
+  cy.get('#user-identifier-input').type(Cypress.env('validEmail'));
+  cy.get('#password-input').type(Cypress.env('validPassword'));
+  cy.get('#submit-button').click();
+});
 // Logout command
-Cypress.Commands.add("logout", () => {
-    cy.visit('/signout')
-})
+Cypress.Commands.add('logout', () => {
+  cy.visit('/signout');
+});
 
-
-Cypress.Commands.add("generateData", (length) => {
-        let result = ''
-        let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-        let charactersLength = characters.length
-        for (let i = 0; i < length; i++) {
-          result += characters.charAt(Math.floor(Math.random() * charactersLength))
-        }
-        return (result)
-
-  
-})
+Cypress.Commands.add('generateData', (length) => {
+  let result = '';
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  const charactersLength = characters.length;
+  for (let i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return (result);
+});
