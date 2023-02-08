@@ -6,21 +6,27 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-    "dependencies": {
+  "dependencies": {
     "cypress": "^9.0.0",
     "cypress-file-upload": "^5.0.8",
-    "mocha": "^8.2.0"
+    "mocha": "^10.2.0"
   },
   "devDependencies": {
     "@cypress/eslint-plugin-dev": "^5.0.2",
     "@cypress/skip-test": "^2.6.1",
-    "eslint": "^8.13.0",
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "eslint": "^8.33.0",
     "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-standard-with-typescript": "^34.0.0",
     "eslint-plugin-chai-friendly": "^0.6.0",
     "eslint-plugin-cypress": "^2.11.2",
-    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.32.2",
     "husky": "^8.0.0",
-    "lint-staged": "^10.5.4"
+    "lint-staged": "^10.5.4",
+    "typescript": "^4.9.5"
   },
   "author": "",
   "license": "ISC"
