@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "eslint ./",
     "lint:fix": "eslint ./ --fix",
-    "bbc" : "cypress open"
+    "bbc" : "cypress open",
+    "api" : "cypress open --config-file=api.config.json"
   },
   "dependencies": {
     "cypress": "^9.0.0",

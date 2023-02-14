@@ -21,3 +21,26 @@ Cypress.Commands.add('login', (email, password) => {
 Cypress.Commands.add('logout', () => {
   cy.visit('/signout');
 });
+
+Cypress.Commands.add('createuser', () => {
+  const env = Cypress.env();
+  Cypress.env('userName', Math.random().toString(36).substring(2, 7));
+  Cypress.env('userEmail', `${Math.random().toString(36).substring(2, 7)}@fakeemail.com`);
+
+  cy.request({
+    method: 'POST',
+    url: '/users',
+    headers: {
+      authorization: env.accessToken,
+    },
+    body: {
+      name: env.userName,
+      gender: env.userGender,
+      email: env.userEmail,
+      status: env.userStatus,
+    },
+  }).then((response) => {
+    const value = response.body.id;
+    return value;
+  });
+});

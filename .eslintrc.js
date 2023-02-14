@@ -21,5 +21,6 @@ module.exports = {
   ],
   rules: {
     'no-plusplus': 0,
+    'linebreak-style': ['error', process.platform === 'win32' ? 'windows' : 'unix'],
   },
 };
