@@ -6,6 +6,7 @@ describe('Sign up', () => {
   afterEach(() => {
     cy.visit('/signout');
   });
+
   it('sign up above 16', () => {
     cy.get('a[data-bbc-result="/register/details/age').click().then(() => {
       cy.get('#day-input').click({ force: true }).type('30', { force: true });
@@ -13,6 +14,7 @@ describe('Sign up', () => {
       cy.get('#year-input').click({ force: true }).type('1999');
       cy.get('#submit-button').click();
     });
+
     cy.get('#user-identifier-input')
       .type(`${Math.random().toString(36).substring(2, 7)}@fakeemail.com`);
     cy.get('#password-input').type('P@$$w0rd12345');

@@ -1,11 +1,12 @@
 // ***********************************************
+
 // generate date command Format : Tuesday, 31 January
 Cypress.Commands.add('getDate', () => {
   const date = new Date();
   const month = Cypress.env('monthNames')[date.getMonth()];
   const dayDate = date.getDate();
   const day = Cypress.env('dayNames')[date.getDay()];
-  Cypress.env('currentDate', `${day}, ${dayDate} ${month}`);
+  return `${day}, ${dayDate} ${month}`;
 });
 
 // Login command
