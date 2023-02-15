@@ -1,5 +1,5 @@
 describe('Sign In page', () => {
-  const envVar = Cypress.env();
+  const env = Cypress.env();
 
   beforeEach(() => {
     cy.visit('/signin');
@@ -18,8 +18,8 @@ describe('Sign In page', () => {
   });
 
   it('login with invalid email and password', () => {
-    cy.get('#user-identifier-input').type(envVar.invalidEmail);
-    cy.get('#password-input').type(envVar.validPassword);
+    cy.get('#user-identifier-input').type(env.invalidEmail);
+    cy.get('#password-input').type(env.validPassword);
     cy.get('#submit-button').click();
     cy.get('.form-message__text > span')
       .contains('Looks like either the email/username or password is wrong');
@@ -27,8 +27,8 @@ describe('Sign In page', () => {
   });
 
   it('login with valid credentiails', () => {
-    cy.get('#user-identifier-input').type(envVar.validEmail);
-    cy.get('#password-input').type(envVar.validPassword);
+    cy.get('#user-identifier-input').type(env.validEmail);
+    cy.get('#password-input').type(env.validPassword);
     cy.get('#submit-button').click().then(() => {
       cy.url().should('contain', 'bbc.com/');
     });

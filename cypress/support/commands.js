@@ -25,7 +25,7 @@ Cypress.Commands.add('logout', () => {
 Cypress.Commands.add('createuser', () => {
   const env = Cypress.env();
   Cypress.env('userName', Math.random().toString(36).substring(2, 7));
-  Cypress.env('userEmail', `${Math.random().toString(36).substring(2, 7)}@fakeemail.com`);
+  Cypress.env('email', `${Math.random().toString(36).substring(2, 7)}@fakeemail.com`);
 
   cy.request({
     method: 'POST',
@@ -36,7 +36,7 @@ Cypress.Commands.add('createuser', () => {
     body: {
       name: env.userName,
       gender: env.userGender,
-      email: env.userEmail,
+      email: env.email,
       status: env.userStatus,
     },
   }).then((response) => {

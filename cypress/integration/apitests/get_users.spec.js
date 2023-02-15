@@ -22,14 +22,13 @@ describe('get users tests', () => {
     cy.createuser().then((value) => {
       cy.request({
         method: 'GET',
-        // eslint-disable-next-line no-useless-concat
         url: `/users/${value}`,
         headers: {
           authorization: env.accessToken,
         },
       }).then((response) => {
         expect(response.status).to.eq(200);
-        expect(response.body.email).to.eq(env.userEmail);
+        expect(response.body.email).to.eq(env.email);
         expect(response.body.gender).to.eq(env.userGender);
         expect(response.body.name).to.eq(env.userName);
         expect(response.body.status).to.eq(env.userStatus);

@@ -1,7 +1,7 @@
 describe('get users tests', () => {
   const env = Cypress.env();
-  Cypress.env('userName', Math.random().toString(36).substring(2, 7));
-  Cypress.env('userEmail', `${Math.random().toString(36).substring(2, 7)}@fakeemail.com`);
+  env.userName = Math.random().toString(36).substring(2, 7);
+  env.email = `${Math.random().toString(36).substring(2, 7)}@fakeemail.com`;
 
   it('create user', () => {
     cy.request({
@@ -13,13 +13,13 @@ describe('get users tests', () => {
       body: {
         name: env.userName,
         gender: env.userGender,
-        email: env.userEmail,
+        email: env.email,
         status: env.userStatus,
       },
     }).then((response) => {
       expect(response.status).to.eq(201);
       expect(response.body.id).to.be.exist;
-      expect(response.body.email).to.eq(env.userEmail);
+      expect(response.body.email).to.eq(env.email);
       expect(response.body.name).to.eq(env.userName);
       expect(response.body.gender).to.eq(env.userGender);
       expect(response.body.status).to.eq(env.userStatus);

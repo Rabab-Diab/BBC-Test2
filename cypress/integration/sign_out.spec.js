@@ -1,9 +1,8 @@
 describe('Signout', () => {
-  const email = Cypress.env('validEmail');
-  const password = Cypress.env('validPassword');
+  const env = Cypress.env();
 
   before(() => {
-    cy.login(email, password);
+    cy.login(env.validEmail, env.validPassword);
   });
 
   it('sign out correctly', () => {
