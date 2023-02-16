@@ -1,0 +1,11 @@
+{
+  "baseUrl": "https://gorest.co.in/public/v2",
+  "env": {
+    "accessToken": "Bearer eb0908088f5f7e0168ce9263f399885dd783695d562f97f31821b24a2ae2af6b",
+    "userId": "",
+    "email": "",
+    "userGender": "female",
+    "userName": "",
+    "userStatus": "inactive"
+  }
+}
